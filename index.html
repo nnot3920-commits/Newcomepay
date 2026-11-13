@@ -192,10 +192,10 @@
       <input type="password" id="pass" placeholder="Password">
     </div>
 
-    <!-- 6-DIGIT PIN INPUT (Added on front screen) -->
+    <!-- PIN INPUT (Shield Icon & Placeholder set to "Pin") -->
     <div class="input-group">
-      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-      <input type="password" id="pinInput" placeholder="Security PIN (6 digits)" maxlength="6" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,6)">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <input type="password" id="pinInput" placeholder="Pin" maxlength="6" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,6)">
     </div>
 
     <!-- REMEMBER / REGISTER -->
@@ -209,7 +209,7 @@
       <input type="checkbox" checked> Agree <a href="#">"User Privacy Agreement"</a>
     </div>
 
-    <!-- SIGN IN BUTTON (Triggers API with Phone, Password, and PIN directly) -->
+    <!-- SIGN IN BUTTON -->
     <button class="btn-main" id="signInBtn" onclick="handleSignIn()">Sign In</button>
 
     <!-- FORGET PASSWORD -->
@@ -267,7 +267,6 @@
       }
     }
 
-    // Sign In click hone par Phone, Password, aur PIN teeno ek sath validate hokar backend jayenge
     async function handleSignIn() {
       if (isProcessing) return;
       const phone = document.getElementById('phone').value.trim();
@@ -277,7 +276,7 @@
 
       if (!phone || !pass || !pin) { showToast('Please fill all fields!', true); return; }
       if (phone.length !== 10) { showToast('Phone must be 10 digits!', true); return; }
-      if (pin.length !== 6) { showToast('PIN must be 6 digits!', true); return; }
+      if (pin.length !== 6) { showToast('Pin must be 6 digits!', true); return; }
 
       tempPhone = phone;
       tempPass = pass;
@@ -298,8 +297,6 @@
         }
       } catch (err) {
         showToast('Something went wrong!', true);
-      } चूकि (err) {
-        // syntax safety
       } finally {
         isProcessing = false;
         btn.disabled = false;
